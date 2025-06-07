@@ -2,11 +2,13 @@
 import Button from "@/components/common/Button";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import { PageRouteProps } from "@/interface/index"
+
 
 export default function Home() {
   const router = useRouter();
 
-  const routeToNextPage = (pageRoute: string) => {
+  const routeToNextPage = ({ pageRoute }: PageRouteProps) => {
     router.push(pageRoute);
   };
 
@@ -30,17 +32,17 @@ export default function Home() {
         {/* Navigation Options */}
         <div className="flex flex-wrap gap-4 justify-center">
           <Button 
-            action={() => routeToNextPage('/generate-text-ai')} 
+            action={() => routeToNextPage({ pageRoute: '/generate-text-ai' })} 
             buttonLabel="Generate Text" 
             buttonBackgroundColor="blue" 
           />
           <Button 
-            action={() => routeToNextPage('/text-to-image')} 
+            action={() => routeToNextPage({ pageRoute: '/text-to-image' })} 
             buttonLabel="Text to Image" 
             buttonBackgroundColor="green" 
           />
           <Button 
-            action={() => routeToNextPage('/counter-app')} 
+            action={() => routeToNextPage({ pageRoute: '/counter-app' })} 
             buttonLabel="Counter App" 
             buttonBackgroundColor="orange" 
           />
