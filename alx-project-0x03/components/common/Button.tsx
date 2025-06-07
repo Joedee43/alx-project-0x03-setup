@@ -1,10 +1,5 @@
 // components/common/Button.tsx
-interface ButtonProps {
-  buttonLabel: string;
-  buttonSize?: string;
-  buttonBackgroundColor?: 'red' | 'blue' | 'orange' | 'green';
-  action?: () => void;
-}
+import { type ButtonProps } from "@/interface/index"
 
 const Button = ({ buttonLabel, buttonSize, buttonBackgroundColor, action }: ButtonProps) => {
   const backgroundColorClass = buttonBackgroundColor ? {
